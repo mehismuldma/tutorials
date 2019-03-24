@@ -1,10 +1,11 @@
 package com.example;
 
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;;
 
 public class CalculatorJUnit5Test {
 
@@ -26,11 +27,10 @@ public class CalculatorJUnit5Test {
         assertEquals(21, Integer.sum(21, 0));
     }
 
-    @Tag("fast")
+    
     @Test
-    public void testDivide() {
-        assertThrows(ArithmeticException.class, () -> {
-            Integer.divideUnsigned(42, 0);
-        });
+    public void testCalculate() {
+        Integer number = Integer.valueOf(5);
+        assertEquals(Integer.valueOf(8), number.add(3));
     }
 }
